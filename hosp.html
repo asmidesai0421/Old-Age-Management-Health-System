@@ -1,0 +1,281 @@
+<?php
+
+$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = $_POST['number'];
+   $date = $_POST['date'];
+
+   $insert = mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, date) VALUES('$name','$email','$number','$date')") or die('query failed');
+
+   if($insert){
+      $message[] = 'appointment made successfully!';
+   }else{
+      $message[] = 'appointment failed';
+   }
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>complete responsive hospital website create by win coder</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> <strong>WC</strong>medical </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#services">services</a>
+        <a href="#doctors">doctors</a>
+    
+        <!-- Add buttons for login pages -->
+        <button class="btn" onclick="location.href='appointment.html';">Appointment</button>
+        <button class="btn" onclick="location.href='doctor_login.html';">Doctor Login</button>
+        <button class="btn" onclick="location.href='patient_login.html';">Patient Login</button>
+    </nav>
+    <div id="menu-btn" class="fas fa-bars"></div>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="image">
+        <img src="image/home-img.svg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>we take care of your healthy life</h3>
+        <p> A person who has good physical health is likely to have bodily functions and processes working at their peak.</p>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- icons section starts  -->
+
+<section class="icons-container">
+
+    <div class="icons">
+        <i class="fas fa-user-md"></i>
+        <h3>150+</h3>
+        <p>doctors at work</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-users"></i>
+        <h3>1030+</h3>
+        <p>satisfied patients</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-procedures"></i>
+        <h3>490+</h3>
+        <p>bed facility</p>
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-hospital"></i>
+        <h3>70+</h3>
+        <p>available hospitals</p>
+    </div>
+
+</section>
+
+<!-- icons section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="image/about-img.svg" alt="">
+        </div>
+
+        <div class="content">
+            <p>At We Care, we understand that senior citizens deserve specialized healthcare that caters to their unique needs. With years of experience in geriatric medicine and a deep commitment to enhancing the quality of life for our elderly patients, we proudly stand as a beacon of care, comfort, and expertise.</p>
+            <p>Where compassionate care meets the wisdom of age.</p>
+            <h3>Our Mission</h3>
+            <p>Our mission is simple yet profound: to provide the highest standard of healthcare for senior citizens while fostering a sense of community, warmth, and respect. We believe that aging is a journey that should be embraced with dignity and grace.</p>
+            <h3>Our Approach</h3>
+            <p>Our hospital is not just a medical facility; it's a haven designed exclusively for seniors. We collaborate closely with old age homes, caregivers, and families to ensure a holistic approach to healthcare. Our team of dedicated doctors, nurses, therapists, and support staff is experienced in geriatric care, and they go the extra mile to make our patients feel valued and cherished.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+    <h1 class="heading"> our <span>services</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-notes-medical"></i>
+            <h3>free checkups</h3>
+            <p>We believe in preventive healthcare. Take advantage of our free checkup programs designed to keep you healthy and catch potential issues early.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-ambulance"></i>
+            <h3>24/7 ambulance</h3>
+            <p>Your safety is paramount. Our dedicated ambulance service is available round the clock to respond swiftly to emergencies and transport you to our facility.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-user-md"></i>
+            <h3>expert doctors</h3>
+            <p> Our team of highly skilled and experienced medical professionals is here to provide you with the best care possible. Rest assured, you're in capable hands.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-pills"></i>
+            <h3>medicines</h3>
+            <p>Convenient access to prescribed medications is crucial. Our on-site pharmacy ensures you have the medicines you need, when you need them.
+            </p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-procedures"></i>
+            <h3>bed facility</h3>
+            <p> For inpatient care, we offer comfortable and well-equipped facilities where you can rest and recover while receiving the care you deserve.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-heartbeat"></i>
+            <h3>total care</h3>
+            <p>At We Care, we're dedicated to providing total care. From diagnosis to treatment, surgery, and rehabilitation, we're here to support you every step of the way.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- services section ends -->
+
+
+
+<!-- doctors section starts  -->
+
+<section class="doctors" id="doctors">
+
+    <h1 class="heading"> our <span>doctors</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Dr. Priyanka Joshi</h3>
+            <span>Cardiologist</span>
+            <div class="share">
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Dr. Rahul Sharma</h3>
+            <span>Orthopedic Surgeon</span>
+            <div class="share">
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Dr. Ketki Shah</h3>
+            <span>Neurologist</span>
+            <div class="share">
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Dr. Ashutosh Patil</h3>
+            <span>Radiologist</span>
+            <div class="share">
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Dr. Nikita Thakur</h3>
+            <span>Dermataelogist</span>
+            <div class="share">
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>Dr. Aanya Gupta</h3>
+            <span>Gynaecologist</span>
+            <div class="share">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Dr. Arjun Mehta</h3>
+            <span>Physician</span>
+            <div class="share">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Dr. Siddharth Bose</h3>
+            <span>General Surgeon</span>
+            <div class="share">
+            </div>
+        </div>
+        <div class="box">
+            <h3>Dr. Meera Roy</h3>
+            <span>Physician</span>
+            <div class="share">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- doctors section ends -->
+
+<!-- appointmenting section starts   -->
+
+
+<!-- footer section starts  -->
+
+
+
+<!-- js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+<a href="doctor_login.html">Doctor Login</a>
+<a href="patient_login.html">Patient Login</a>
+<a href="appointment.html"></a>
+</html>

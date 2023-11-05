@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Dashboard</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Replace with the path to your stylesheet -->
+    <!-- You may need to include additional CSS or link to external stylesheets if required -->
+    <style>
+        body {
+            text-align: center; /* Center align text */
+            font-size: 18px; /* Increase the base font size */
+        }
+
+        .entity-section {
+            text-align: left; /* Reset text alignment for specific sections */
+            margin: 0 auto; /* Center section content */
+            width: 80%; /* Adjust the width as needed */
+            padding: 2rem;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Increase the font size for headers and paragraphs */
+        h2, h3, p {
+            font-size: 20px; /* You can adjust the font size as needed */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Doctor's Dashboard</div>
+        <div id="menu-btn">&#9776</div>
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#appointments">Appointments</a>
+            <a href="#profile">Profile</a>
+            <a href="doctor_login.html">Logout</a> <!-- Replace 'logout.php' with your logout script URL -->
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="image">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-medical-healthcare-dashboard-5588611-4655418.png" alt="Doctor Image">
+        </div>
+        <div class="content">
+            <h3>Welcome, Dr. Ashutosh Patil</h3> <!-- Replace with the doctor's name -->
+            <p>Manage your appointments, view your profile, and more.</p>
+        </div>
+    </section>
+
+    <section id="appointments" class="entity-section">
+        <h2>Appointments</h2>
+        <ul>
+            <li>
+                <h3>Upcoming Appointments</h3>
+                <p>Appointment with Patient John Doe on 2023-10-20 at 2:00 PM.</p>
+            </li>
+            <li>
+                <h3>Past Appointments</h3>
+                <p>Appointment with Patient Jane Smith on 2023-10-15 at 3:30 PM.</p>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="profile" class="entity-section">
+        <h2>Profile</h2>
+        <div class="profile-details">
+            <p><strong>Name:</strong> Dr. Ashutosh Patil</p>
+            <p><strong>Doctor ID:</strong> 10012</p>
+            <p><strong>Specialization:</strong> Radiologist</p>
+            <p><strong>Email:</strong> ashutoshpatil@gmail.com</p>
+            <p><strong>Contact:</strong>+91 9833454709</p>
+        </div>
+    </section>
+
+    <!-- Add more sections for different content as needed -->
+</body>
+
+</html>

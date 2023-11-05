@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .entity-section {
+            text-align: left;
+            margin: 0 auto;
+            width: 80%;
+            padding: 2rem;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h3, p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Patient Dashboard</div>
+        <div id="menu-btn">&#9776</div>
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#appointments">Appointments</a>
+            <a href="#profile">Profile</a>
+            <a href="patient_login.html">Logout</a>
+        </div>
+    </header>
+
+    <section class="home">
+        <div class="image">
+            <img src="https://creamyanimation.com/wp-content/uploads/2021/03/Creamy-Healthcare.jpg" alt="Patient Image">
+        </div>
+        <div class="content">
+            <h3>Welcome, John Doe</h3>
+            <p>Manage your appointments, view your profile, and more.</p>
+        </div>
+    </section>
+
+    <section id="appointments" class="entity-section">
+        <h2>Appointments</h2>
+        <ul>
+            <li>
+                <h3>Upcoming Appointments</h3>
+                <p>Appointment with Dr. Smith on 2023-10-15 at 10:00 AM.</p>
+            </li>
+            <li>
+                <h3>Past Appointments</h3>
+                <p>Appointment with Dr. Johnson on 2023-10-10 at 2:30 PM.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="profile" class="entity-section">
+        <h2>Profile</h2>
+        <div class="profile-details">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Patient ID:</strong> 22023334</p>
+            <p><strong>Age:</strong> 68</p>
+            <p><strong>Sex:</strong> Male</p>
+            <p><strong>Diseases:</strong> Diabetes, High Blood Pressure </p>
+            <p><strong>Ongoing Medicines:</strong> Insulin, Beta-Blockers, Losartan</p>
+            <p><strong>Expenses:</strong> 20000(Ongoing)</p>                                       
+            <p><strong>Email:</strong> patient@example.com</p>
+            <p><strong>Contact:</strong> (123) 456-7890</p>
+            <p><strong>DOB:</strong> 1990-01-15</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="credit">
+            &copy; 2023 Patient Dashboard <span>Powered by Your Clinic</span>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const menuButton = document.getElementById('menu-btn');
+        const navbar = document.querySelector('.navbar');
+        menuButton.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Hospital Appointment Booking</title>
+    <!-- Link to the provided CSS style -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .appointment {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .appointment-form {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .appointment-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="appointment">
+        <div class="appointment-form">
+            <h1 class="heading">Book an Appointment</h1>
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <?php
+            if (isset($message)) {
+                foreach ($message as $message) {
+                    echo '<p class="message">' . $message . '</p>';
+                }
+            }
+            ?>
+        
+            <div class="form-group">
+                <label for="name" style="font-size: 2.6rem;">Your Name:</label>
+                <input type="text" name="name" id="name" class="box" style="font-size: 1.6rem;">
+            </div>
+        
+            <div class="form-group">
+                <label for "number" style="font-size: 2.6rem;">Your Number:</label>
+                <input type="number" name="number" id="number" class="box" style="font-size: 2.6rem;">
+            </div>
+        
+            <div class="form-group">
+                <label for="email" style="font-size: 2.6rem;">Your Email:</label>
+                <input type="email" name="email" id="email" class="box" style="font-size: 2.6rem;">
+            </div>
+        
+            <div class="form-group">
+                <label for="date" style="font-size: 2.6rem;">Preferred Appointment Date:</label>
+                <input type="date" name="date" id="date" class="box" style="font-size: 2.6rem;">
+            </div>
+        
+            <input type="submit" name="submit" value="Make Appointment" class="btn" style="font-size: 2.6rem;">
+        </form>
+            </form>
+        </div>
+        <div class="image-container">
+            <img class="appointment-img" src="image/appointment-img.svg" alt="Appointment Image">
+        </div>
+    </section>
+</body>
+</html>

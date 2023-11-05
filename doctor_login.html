@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to your style.css file -->
+    <style>
+        /* Add any additional inline styles here if needed */
+        body {
+            background: var(--light-color);
+        }
+
+        .login-container {
+            padding: 2rem 9%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-title {
+            font-size: 4.5rem;
+            color: var(--black);
+            text-shadow: var(--text-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .error {
+            color: #c0392b;
+            font-size: 1.7rem;
+        }
+
+        .login-form {
+            background: #fff;
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            padding: 2rem;
+            border-radius: .5rem;
+        }
+
+        .login-label {
+            color: var(--black);
+            font-size: 2.5rem;
+            padding-bottom: 1rem;
+        }
+
+        .login-input {
+            width: 100%;
+            margin: .7rem 0;
+            border-radius: .5rem;
+            border: var(--border);
+            font-size: 1.6rem;
+            color: var(--black);
+            text-transform: none;
+            padding: 1rem;
+        }
+
+        .login-button {
+            padding: 1rem 4rem;
+            background: var(--green);
+            color: #fff;
+            border: var(--border);
+            border-radius: .5rem;
+            box-shadow: var(--box-shadow);
+            font-size: 1.7rem;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background: #fff;
+            color: var(--green);
+        }
+    </style>
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Dummy username and password (replace with your actual authentication logic)
+            const dummyUsername = 'doctor';
+            const dummyPassword = 'password';
+
+            if (username === dummyUsername && password === dummyPassword) {
+                // Redirect to the doctor's dashboard (replace with the actual dashboard URL)
+                window.location.href = 'doctor.html';
+            } else {
+                // Display an error message
+                document.getElementById('error').innerText = 'Invalid username or password';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="login-title">Doctor Login</h1>
+        <form class="login-form" method="post">
+            <label for="username" class="login-label">Username:</label>
+            <input type="text" id="username" name="username" class="login-input" required><br>
+
+            <label for="password" class="login-label">Password:</label>
+            <input type="password" id="password" name="password" class="login-input" required><br>
+
+            <input type="button" value="Login" class="login-button" onclick="login()">
+            <p id="error" class="error"></p>
+        </form>
+    </div>
+</body>
+</html>
